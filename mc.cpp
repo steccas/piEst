@@ -28,9 +28,9 @@ void mc::calcC()
 
 mc::mc(int N)
 {
-    this->N = N;
+    this->N = N; //Numero campioni
     totThreads = std::thread::hardware_concurrency();
-    Nt = N / totThreads;
+    Nt = N / totThreads; //campioni per thread
     estPi = 0;
     devSt = 0;
     c = new confidenza();
@@ -65,7 +65,7 @@ double mc::standardCalc()
 
 void mc::finalCalc()
 {
-    estPi = AS * 4;
+    estPi = AS * 4; //risultato stima
     devStCalc();
     calcC();
 }

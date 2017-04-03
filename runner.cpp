@@ -27,13 +27,11 @@ short runner::run(int _N)
     float duration = duration_cast<microseconds>(t2 - t1).count();
     float rError = fabs(1.0 - (business->getEstPi()) / M_PI);
 
-    cout;
-
     cout << "Used " + to_string(business->getTotThreads()) + " threads\n"
-	 << "Estimated PI: " << business->getEstPi() << "\n"
-	 << "Relative error: " << rError << "\n"
-	 << "Hits: " << ((HoM *)business)->getHits() << "\n"
-	 << "Miss: " << ((HoM *)business)->getMiss() << "\nTempo di elaborazione: " << duration / 1000 << "ms";
+         << "Estimated PI: " << business->getEstPi() << "\n"
+         << "Relative error: " << rError << "\n"
+         << "Hits: " << ((HoM *)business)->getHits() << "\n"
+         << "Miss: " << ((HoM *)business)->getMiss() << "\nTempo di elaborazione: " << duration / 1000 << "ms";
 
     array<double, 2> conf = business->getC()->getConf();
     cout << "\nAS: " << business->getAS() << "\nDev. St.: " << business->getDevSt() << "\nConfidenza Left: " << conf[0] << "\nConfidenza Right: " << conf[1] << "\n";
